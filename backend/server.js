@@ -13,6 +13,7 @@ import { mountWebApps } from './services/webHostingService.js';
 import { captureRawBody } from './middlewares/rawBodyMiddleware.js';
 import { generalLimiter } from './middlewares/rateLimitMiddleware.js';
 import { errorHandler, notFoundHandler } from './middlewares/errorMiddleware.js';
+import { requestLogger } from './middlewares/requestLogger.js';
 
 // Route Imports
 import authRoutes from './routes/authRoutes.js';
@@ -29,6 +30,8 @@ import deliveryRoutes from './routes/deliveryRoutes.js';
 import reportRoutes from './routes/reportRoutes.js';
 
 const app = express();
+// Include failures rejected before body parsing, routing or authentication.
+app.use(requestLogger({ enabled: env.REQUEST_LOG_ENABLED, logHealthChecks: env.REQUEST_LOG_HEALTH_CHECKS }));
 
 // 1. Security Headers (Checklist 1.3.9)
 app.use(helmet({ contentSecurityPolicy: { directives: { imgSrc: ["'self'", 'data:', 'https://res.cloudinary.com'], upgradeInsecureRequests: env.NODE_ENV === 'production' ? [] : null } } }));

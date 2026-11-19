@@ -11,6 +11,7 @@ export const asyncHandler = (fn) => (req, res, next) => {
  * 404 Route Not Found Handler
  */
 export const notFoundHandler = (req, res) => {
+  res.locals.requestError = { code: 'ROUTE_NOT_FOUND', name: 'NotFound' };
   res.status(404).json({
     success: false,
     message: `Resource not found: ${req.method} ${req.originalUrl}`,
@@ -63,6 +64,7 @@ export const errorHandler = (err, req, res, next) => { // eslint-disable-line no
     code = 'TOKEN_EXPIRED';
   }
 
+  res.locals.requestError = { code, name: err.name || 'Error' };
   res.status(statusCode).json({
     success: false,
     message,

@@ -7,3 +7,4 @@ SMTP_SETUP.md
 TELEGRAM_SETUP.md
 TESTING.md
 .env.example
+REQUEST_LOGGING.md

@@ -11,6 +11,8 @@ const envSchema = z.object({
     .enum(["development", "production", "test"])
     .default("development"),
   PORT: z.coerce.number().default(5000),
+  REQUEST_LOG_ENABLED: z.enum(['true', 'false']).default(process.env.NODE_ENV === 'test' ? 'false' : 'true').transform(value => value === 'true'),
+  REQUEST_LOG_HEALTH_CHECKS: z.enum(['true', 'false']).default('false').transform(value => value === 'true'),
   MONGODB_URI: z.string().default("mongodb://127.0.0.1:27017/mclily"),
   JWT_SECRET: z
     .string()

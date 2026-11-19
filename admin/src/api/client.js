@@ -7,6 +7,8 @@ const API_BASE_URL = resolveLocalApi(
 );
 
 const api = axios.create({
+  adapter: 'fetch',
+  fetchOptions: { cache: 'no-store' },
   baseURL: API_BASE_URL,
   withCredentials: true,
   headers: {
@@ -16,7 +18,20 @@ const api = axios.create({
 
 // Interceptor to handle unauthorized errors smoothly
 api.interceptors.response.use(
-  (response) => response,
+  (response) => {
+    if (
+      typeof response.data === 'string' &&
+      /^\s*(?:<!doctype\s+html|<html)/i.test(response.data)
+    ) {
+      const error = new Error(
+        'The store connection is unavailable. Please contact the technical administrator.'
+      );
+      error.code = 'API_RETURNED_HTML';
+      error.response = response;
+      return Promise.reject(error);
+    }
+    return response;
+  },
   (error) => {
     if (
       error.response?.status === 401 &&
