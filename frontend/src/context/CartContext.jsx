@@ -1,17 +1,17 @@
-import { IS_PREVIEW_CATALOG } from '../api/catalog';
+import { IS_PREVIEW_CATALOG } from "../api/catalog";
 import {
   createContext,
   useContext,
   useState,
   useEffect,
   useCallback,
-} from 'react';
-import api from '../api/client';
-import { cartPersistencePending, cartPersistenceFinished } from '../pwa/client';
+} from "react";
+import api from "../api/client";
+import { cartPersistencePending, cartPersistenceFinished } from "../pwa/client";
 
 const STORAGE_KEY = IS_PREVIEW_CATALOG
-  ? 'mcl_preview_cart_items'
-  : 'mcl_cart_items';
+  ? "mcl_preview_cart_items"
+  : "mcl_cart_items";
 
 const CartContext = createContext();
 
@@ -20,7 +20,7 @@ export const CartProvider = ({ children }) => {
     try {
       const saved = localStorage.getItem(STORAGE_KEY);
       const items = saved ? JSON.parse(saved) : [];
-      if (!Array.isArray(items)) throw new Error('Invalid saved bag');
+      if (!Array.isArray(items)) throw new Error("Invalid saved bag");
       return { items, readable: true };
     } catch {
       return { items: [], readable: false };
@@ -29,13 +29,13 @@ export const CartProvider = ({ children }) => {
   const [items, setItems] = useState(loadedCart.items);
 
   const [isBagOpen, setIsBagOpen] = useState(false);
-  const [deliveryTier, setDeliveryTier] = useState('');
+  const [deliveryTier, setDeliveryTier] = useState("");
   const [deliveryPolicy, setDeliveryPolicy] = useState(null);
   const [deliveryLoading, setDeliveryLoading] = useState(true);
-  const [deliveryError, setDeliveryError] = useState('');
+  const [deliveryError, setDeliveryError] = useState("");
   const loadDelivery = useCallback((signal) => {
     return api
-      .get('/delivery/options', { signal })
+      .get("/delivery/options", { signal })
       .then((response) => {
         if (signal?.aborted) return;
         const policy = response.data?.data;
@@ -45,13 +45,13 @@ export const CartProvider = ({ children }) => {
           !Array.isArray(policy.options)
         )
           throw new Error(
-            'Delivery options are unavailable. Please try again.'
+            "Delivery options are unavailable. Please try again.",
           );
         setDeliveryPolicy(policy);
         setDeliveryTier((current) =>
           policy.options.some((option) => option.id === current)
             ? current
-            : policy.options[0]?.id || ''
+            : policy.options[0]?.id || "",
         );
       })
       .catch((error) => {
@@ -63,23 +63,23 @@ export const CartProvider = ({ children }) => {
   }, []);
   const refreshDelivery = useCallback(() => {
     setDeliveryLoading(true);
-    setDeliveryError('');
+    setDeliveryError("");
     return loadDelivery();
   }, [loadDelivery]);
   useEffect(() => {
     const controller = new AbortController();
     void loadDelivery(controller.signal);
-    window.addEventListener('online', refreshDelivery);
+    window.addEventListener("online", refreshDelivery);
     return () => {
       controller.abort();
-      window.removeEventListener('online', refreshDelivery);
+      window.removeEventListener("online", refreshDelivery);
     };
   }, [loadDelivery, refreshDelivery]);
   const deliveryOption = deliveryPolicy?.options.find(
-    (v) => v.id === deliveryTier
+    (v) => v.id === deliveryTier,
   );
   const deliveryReady = Boolean(
-    deliveryOption && !deliveryLoading && !deliveryError
+    deliveryOption && !deliveryLoading && !deliveryError,
   );
 
   useEffect(() => {
@@ -96,8 +96,8 @@ export const CartProvider = ({ children }) => {
       }
     };
     persist();
-    window.addEventListener('mcl:retry-bag-save', persist);
-    return () => window.removeEventListener('mcl:retry-bag-save', persist);
+    window.addEventListener("mcl:retry-bag-save", persist);
+    return () => window.removeEventListener("mcl:retry-bag-save", persist);
   }, [items, loadedCart.readable]);
 
   const openBag = () => setIsBagOpen(true);
@@ -107,12 +107,12 @@ export const CartProvider = ({ children }) => {
   const addRetailItem = ({ product, size, color, quantity = 1 }) => {
     cartPersistencePending();
     const variant = product.sizes?.find(
-      (v) => v.size === size && (color === undefined || v.color === color)
+      (v) => v.size === size && (color === undefined || v.color === color),
     );
     setItems((prev) => {
       const existingIndex = prev.findIndex(
         (i) =>
-          i.productId === product._id && i.size === size && i.color === color
+          i.productId === product._id && i.size === size && i.color === color,
       );
 
       if (existingIndex > -1) {
@@ -124,15 +124,15 @@ export const CartProvider = ({ children }) => {
       return [
         ...prev,
         {
-          id: `${product._id}_${size || 'std'}_${color || 'def'}`,
+          id: `${product._id}_${size || "std"}_${color || "def"}`,
           productId: product._id,
-          productType: 'retail',
+          productType: "retail",
           name: product.name,
           deliveryRequiresQuote: Boolean(product.deliveryRequiresQuote),
           slug: product.slug,
           price: variant?.priceOverride ?? product.price,
           originalPrice: product.originalPrice,
-          image: product.images?.[0] || '',
+          image: product.images?.[0] || "",
           size,
           retailVariantId: variant?._id,
           color,
@@ -140,7 +140,7 @@ export const CartProvider = ({ children }) => {
         },
       ];
     });
-    openBag();
+    // openBag();
   };
 
   // Add Fabric Product (by the yard with 0.5 increments, Checklist 2.1.2)
@@ -151,14 +151,14 @@ export const CartProvider = ({ children }) => {
     setItems((prev) => {
       const existingIndex = prev.findIndex(
         (i) =>
-          i.productId === product._id && i.fabricVariantId === colorVariant._id
+          i.productId === product._id && i.fabricVariantId === colorVariant._id,
       );
 
       if (existingIndex > -1) {
         const next = [...prev];
         next[existingIndex].yards += validYards;
         next[existingIndex].halfYards = Math.round(
-          next[existingIndex].yards * 2
+          next[existingIndex].yards * 2,
         );
         return next;
       }
@@ -168,13 +168,13 @@ export const CartProvider = ({ children }) => {
         {
           id: `${product._id}_fabric_${colorVariant._id}`,
           productId: product._id,
-          productType: 'fabric',
+          productType: "fabric",
           deliveryRequiresQuote: Boolean(product.deliveryRequiresQuote),
           name: product.name,
           slug: product.slug,
           price: product.pricePerYard,
           pricePerYard: product.pricePerYard,
-          image: colorVariant.image || product.images?.[0] || '',
+          image: colorVariant.image || product.images?.[0] || "",
           fabricVariantId: colorVariant._id,
           fabricColor: colorVariant.colorName,
           material: product.material,
@@ -183,7 +183,7 @@ export const CartProvider = ({ children }) => {
         },
       ];
     });
-    openBag();
+    // openBag();
   };
 
   const removeItem = (id) => {
@@ -197,10 +197,10 @@ export const CartProvider = ({ children }) => {
       prev
         .map((item) => {
           if (item.id === id) {
-            if (item.productType === 'retail') {
+            if (item.productType === "retail") {
               const newQty = item.quantity + delta;
               return newQty > 0 ? { ...item, quantity: newQty } : null;
-            } else if (item.productType === 'fabric') {
+            } else if (item.productType === "fabric") {
               const newYards = Math.max(1, item.yards + delta * 0.5);
               return {
                 ...item,
@@ -211,7 +211,7 @@ export const CartProvider = ({ children }) => {
           }
           return item;
         })
-        .filter(Boolean)
+        .filter(Boolean),
     );
   };
 
@@ -222,7 +222,7 @@ export const CartProvider = ({ children }) => {
 
   // Pricing computations
   const subtotal = items.reduce((acc, item) => {
-    if (item.productType === 'retail') {
+    if (item.productType === "retail") {
       return acc + item.price * item.quantity;
     } else {
       return acc + item.pricePerYard * item.yards;
@@ -243,7 +243,7 @@ export const CartProvider = ({ children }) => {
   const totalAmount = Math.round((baseAmount + paymentFee) * 100) / 100;
 
   const totalItemsCount = items.reduce((acc, item) => {
-    return acc + (item.productType === 'retail' ? item.quantity : 1);
+    return acc + (item.productType === "retail" ? item.quantity : 1);
   }, 0);
 
   return (

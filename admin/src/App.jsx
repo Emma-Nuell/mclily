@@ -2,6 +2,7 @@ import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import { ThemeProvider } from './contexts/ThemeContext';
 import { AuthProvider } from './contexts/AuthContext';
 import ProtectedRoute from './components/ProtectedRoute';
+import ScrollToTop from './components/ScrollToTop';
 import AdminLayout from './layouts/AdminLayout';
 import LoginPage from './pages/LoginPage';
 import DashboardPage from './pages/DashboardPage';
@@ -22,6 +23,7 @@ export default function App() {
         <BrowserRouter
           basename={import.meta.env.BASE_URL.replace(/\/$/, '') || '/'}
         >
+          <ScrollToTop />
           <Routes>
             {/* Public Auth Route */}
             <Route path="/login" element={<LoginPage />} />

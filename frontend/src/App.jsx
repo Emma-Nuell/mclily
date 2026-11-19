@@ -9,6 +9,7 @@ import Navbar from './components/Navbar';
 import BottomNav from './components/BottomNav';
 import BagDrawer from './components/BagDrawer';
 import Footer from './components/Footer';
+import ScrollToTop from './components/ScrollToTop';
 import PwaStatus from './components/PwaStatus';
 import PageMetadata from './components/PageMetadata';
 import NotFoundPage from './pages/NotFoundPage';
@@ -33,6 +34,7 @@ function App() {
         <WishlistProvider>
           <CartProvider>
             <Router>
+         <ScrollToTop />     
               <PageMetadata />
               <div className="min-h-screen flex flex-col bg-background text-text-primary transition-colors duration-200">
                 <Navbar />
