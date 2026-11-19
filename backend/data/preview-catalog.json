@@ -1,0 +1,638 @@
+{
+  "_meta": {
+    "purpose": "Temporary storefront preview. Not real inventory.",
+    "version": 1
+  },
+  "products": [
+    {
+      "_id": "preview-relaxed-black-overshirt",
+      "slug": "relaxed-black-overshirt",
+      "name": "Relaxed Black Overshirt",
+      "productType": "retail",
+      "category": "Clothing",
+      "brand": "McLily Preview",
+      "description": "Relaxed Black Overshirt. A sample item for exploring the McLily storefront. Photos, price and stock are illustrative; this item is not available for purchase.",
+      "price": 28000,
+      "images": [
+        "/images/mclily-campaign-v2.jpg"
+      ],
+      "tags": [
+        "Men",
+        "Casual"
+      ],
+      "isActive": true,
+      "isFeatured": true,
+      "rating": 0,
+      "reviewsCount": 0,
+      "lowStockThreshold": 5,
+      "createdAt": "2026-10-28T12:00:00Z",
+      "sizes": [
+        {
+          "size": "M",
+          "color": "Black",
+          "stock": 8
+        },
+        {
+          "size": "L",
+          "color": "Black",
+          "stock": 4
+        },
+        {
+          "size": "XL",
+          "color": "Black",
+          "stock": 0
+        }
+      ],
+      "specifications": {
+        "Collection": "Preview collection",
+        "Availability": "Demonstration only"
+      },
+      "originalPrice": 35000
+    },
+    {
+      "_id": "preview-pastel-low-top-sneakers",
+      "slug": "pastel-low-top-sneakers",
+      "name": "Pastel Low-Top Sneakers",
+      "productType": "retail",
+      "category": "Shoes",
+      "brand": "McLily Preview",
+      "description": "Pastel Low-Top Sneakers. A sample item for exploring the McLily storefront. Photos, price and stock are illustrative; this item is not available for purchase.",
+      "price": 65000,
+      "images": [
+        "/images/footwear-edit.jpg"
+      ],
+      "tags": [
+        "Women",
+        "Men",
+        "Sneakers"
+      ],
+      "isActive": true,
+      "isFeatured": true,
+      "rating": 0,
+      "reviewsCount": 0,
+      "lowStockThreshold": 5,
+      "createdAt": "2026-10-27T12:00:00Z",
+      "sizes": [
+        {
+          "size": "40",
+          "color": "Pastel",
+          "stock": 6
+        },
+        {
+          "size": "41",
+          "color": "Pastel",
+          "stock": 5
+        },
+        {
+          "size": "42",
+          "color": "Pastel",
+          "stock": 9
+        }
+      ],
+      "specifications": {
+        "Collection": "Preview collection",
+        "Availability": "Demonstration only"
+      },
+      "originalPrice": 72000
+    },
+    {
+      "_id": "preview-quilted-shoulder-bag",
+      "slug": "quilted-shoulder-bag",
+      "name": "Quilted Shoulder Bag",
+      "productType": "retail",
+      "category": "Bags",
+      "brand": "McLily Preview",
+      "description": "Quilted Shoulder Bag. A sample item for exploring the McLily storefront. Photos, price and stock are illustrative; this item is not available for purchase.",
+      "price": 42000,
+      "images": [
+        "/images/bags-edit.jpg"
+      ],
+      "tags": [
+        "Women",
+        "Accessories"
+      ],
+      "isActive": true,
+      "isFeatured": true,
+      "rating": 0,
+      "reviewsCount": 0,
+      "lowStockThreshold": 5,
+      "createdAt": "2026-10-26T12:00:00Z",
+      "sizes": [
+        {
+          "size": "Standard",
+          "color": "Original",
+          "stock": 12
+        }
+      ],
+      "specifications": {
+        "Collection": "Preview collection",
+        "Availability": "Demonstration only"
+      }
+    },
+    {
+      "_id": "preview-sunshine-two-piece",
+      "slug": "sunshine-two-piece",
+      "name": "Sunshine Two-Piece Set",
+      "productType": "retail",
+      "category": "Clothing",
+      "brand": "McLily Preview",
+      "description": "Sunshine Two-Piece Set. A sample item for exploring the McLily storefront. Photos, price and stock are illustrative; this item is not available for purchase.",
+      "price": 48000,
+      "images": [
+        "/images/womens-edit.jpg"
+      ],
+      "tags": [
+        "Women",
+        "Casual"
+      ],
+      "isActive": true,
+      "isFeatured": true,
+      "rating": 0,
+      "reviewsCount": 0,
+      "lowStockThreshold": 5,
+      "createdAt": "2026-10-25T12:00:00Z",
+      "sizes": [
+        {
+          "size": "S",
+          "color": "Yellow",
+          "stock": 7
+        },
+        {
+          "size": "M",
+          "color": "Yellow",
+          "stock": 10
+        },
+        {
+          "size": "L",
+          "color": "Yellow",
+          "stock": 3
+        }
+      ],
+      "specifications": {
+        "Collection": "Preview collection",
+        "Availability": "Demonstration only"
+      }
+    },
+    {
+      "_id": "preview-studio-wireless-headphones",
+      "slug": "studio-wireless-headphones",
+      "name": "Studio Wireless Headphones",
+      "productType": "retail",
+      "category": "Electronics",
+      "brand": "McLily Preview",
+      "description": "Studio Wireless Headphones. A sample item for exploring the McLily storefront. Photos, price and stock are illustrative; this item is not available for purchase.",
+      "price": 36000,
+      "images": [
+        "/images/electronics-edit.jpg"
+      ],
+      "tags": [
+        "Audio",
+        "Accessories"
+      ],
+      "isActive": true,
+      "isFeatured": true,
+      "rating": 0,
+      "reviewsCount": 0,
+      "lowStockThreshold": 5,
+      "createdAt": "2026-10-24T12:00:00Z",
+      "sizes": [
+        {
+          "size": "Standard",
+          "color": "Original",
+          "stock": 12
+        }
+      ],
+      "specifications": {
+        "Collection": "Preview collection",
+        "Availability": "Demonstration only"
+      },
+      "originalPrice": 45000
+    },
+    {
+      "_id": "preview-classic-satin-lapel-suit",
+      "slug": "classic-satin-lapel-suit",
+      "name": "Classic Three-Piece Suit",
+      "productType": "retail",
+      "category": "Clothing",
+      "brand": "McLily Preview",
+      "description": "Classic Three-Piece Suit. A sample item for exploring the McLily storefront. Photos, price and stock are illustrative; this item is not available for purchase.",
+      "price": 125000,
+      "images": [
+        "/images/tailoring-campaign.jpg"
+      ],
+      "tags": [
+        "Men",
+        "Corporate"
+      ],
+      "isActive": true,
+      "isFeatured": true,
+      "rating": 0,
+      "reviewsCount": 0,
+      "lowStockThreshold": 5,
+      "createdAt": "2026-10-23T12:00:00Z",
+      "sizes": [
+        {
+          "size": "M",
+          "color": "Blue",
+          "stock": 5
+        },
+        {
+          "size": "L",
+          "color": "Blue",
+          "stock": 4
+        }
+      ],
+      "specifications": {
+        "Collection": "Preview collection",
+        "Availability": "Demonstration only"
+      }
+    },
+    {
+      "_id": "preview-red-knit-trainers",
+      "slug": "red-knit-trainers",
+      "name": "Red Knit Trainers",
+      "productType": "retail",
+      "category": "Shoes",
+      "brand": "McLily Preview",
+      "description": "Red Knit Trainers. A sample item for exploring the McLily storefront. Photos, price and stock are illustrative; this item is not available for purchase.",
+      "price": 55000,
+      "images": [
+        "/images/sneakers-campaign.jpg"
+      ],
+      "tags": [
+        "Men",
+        "Women",
+        "Sneakers"
+      ],
+      "isActive": true,
+      "isFeatured": true,
+      "rating": 0,
+      "reviewsCount": 0,
+      "lowStockThreshold": 5,
+      "createdAt": "2026-10-22T12:00:00Z",
+      "sizes": [
+        {
+          "size": "41",
+          "color": "Red",
+          "stock": 5
+        },
+        {
+          "size": "42",
+          "color": "Red",
+          "stock": 8
+        },
+        {
+          "size": "43",
+          "color": "Red",
+          "stock": 2
+        }
+      ],
+      "specifications": {
+        "Collection": "Preview collection",
+        "Availability": "Demonstration only"
+      }
+    },
+    {
+      "_id": "preview-everyday-beauty-edit",
+      "slug": "everyday-beauty-edit",
+      "name": "Everyday Beauty Edit",
+      "productType": "retail",
+      "category": "Beauty",
+      "brand": "McLily Preview",
+      "description": "Everyday Beauty Edit. A sample item for exploring the McLily storefront. Photos, price and stock are illustrative; this item is not available for purchase.",
+      "price": 18000,
+      "images": [
+        "/images/beauty-edit.jpg"
+      ],
+      "tags": [
+        "Beauty",
+        "Personal Care"
+      ],
+      "isActive": true,
+      "isFeatured": true,
+      "rating": 0,
+      "reviewsCount": 0,
+      "lowStockThreshold": 5,
+      "createdAt": "2026-10-21T12:00:00Z",
+      "sizes": [
+        {
+          "size": "Standard",
+          "color": "Original",
+          "stock": 12
+        }
+      ],
+      "specifications": {
+        "Collection": "Preview collection",
+        "Availability": "Demonstration only"
+      }
+    },
+    {
+      "_id": "preview-kitchen-essentials-edit",
+      "slug": "kitchen-essentials-edit",
+      "name": "Kitchen Essentials Edit",
+      "productType": "retail",
+      "category": "Appliances",
+      "brand": "McLily Preview",
+      "description": "Kitchen Essentials Edit. A sample item for exploring the McLily storefront. Photos, price and stock are illustrative; this item is not available for purchase.",
+      "price": 32000,
+      "images": [
+        "/images/home-edit.jpg"
+      ],
+      "tags": [
+        "Home & Kitchen",
+        "Home"
+      ],
+      "isActive": true,
+      "isFeatured": false,
+      "rating": 0,
+      "reviewsCount": 0,
+      "lowStockThreshold": 5,
+      "createdAt": "2026-10-20T12:00:00Z",
+      "sizes": [
+        {
+          "size": "Standard",
+          "color": "Original",
+          "stock": 12
+        }
+      ],
+      "specifications": {
+        "Collection": "Preview collection",
+        "Availability": "Demonstration only"
+      }
+    },
+    {
+      "_id": "preview-little-ones-gift-set",
+      "slug": "little-ones-gift-set",
+      "name": "Little Ones Gift Set",
+      "productType": "retail",
+      "category": "Clothing",
+      "brand": "McLily Preview",
+      "description": "Little Ones Gift Set. A sample item for exploring the McLily storefront. Photos, price and stock are illustrative; this item is not available for purchase.",
+      "price": 22000,
+      "images": [
+        "/images/kids-edit.jpg"
+      ],
+      "tags": [
+        "Kids",
+        "Babies"
+      ],
+      "isActive": true,
+      "isFeatured": false,
+      "rating": 0,
+      "reviewsCount": 0,
+      "lowStockThreshold": 5,
+      "createdAt": "2026-10-19T12:00:00Z",
+      "sizes": [
+        {
+          "size": "Standard",
+          "color": "Original",
+          "stock": 12
+        }
+      ],
+      "specifications": {
+        "Collection": "Preview collection",
+        "Availability": "Demonstration only"
+      }
+    },
+    {
+      "_id": "preview-natural-linen",
+      "slug": "natural-linen",
+      "name": "Natural Linen",
+      "productType": "fabric",
+      "category": "Fabrics",
+      "brand": "McLily Preview",
+      "material": "Linen",
+      "description": "Natural Linen. Sample fabric listing for testing swatches and half-yard quantities. Image, colour, price and roll stock are illustrative; not available for purchase.",
+      "price": 14000,
+      "pricePerYard": 14000,
+      "images": [
+        "/images/fabric-editorial-v2.jpg"
+      ],
+      "tags": [
+        "Linen",
+        "Fabric"
+      ],
+      "isActive": true,
+      "isFeatured": true,
+      "rating": 0,
+      "reviewsCount": 0,
+      "createdAt": "2026-10-29T12:00:00Z",
+      "colorVariants": [
+        {
+          "_id": "preview-natural-linen-original",
+          "colorName": "Original",
+          "swatchColor": "#C4B59D",
+          "rollStockHalfYards": 60,
+          "image": "/images/fabric-editorial-v2.jpg"
+        },
+        {
+          "_id": "preview-natural-linen-contrast",
+          "colorName": "Contrast",
+          "swatchColor": "#48483F",
+          "rollStockHalfYards": 12,
+          "image": "/images/fabric-editorial-v2.jpg"
+        }
+      ]
+    },
+    {
+      "_id": "preview-soft-ivory-cotton",
+      "slug": "soft-ivory-cotton",
+      "name": "Soft Ivory Cotton",
+      "productType": "fabric",
+      "category": "Fabrics",
+      "brand": "McLily Preview",
+      "material": "Cotton",
+      "description": "Soft Ivory Cotton. Sample fabric listing for testing swatches and half-yard quantities. Image, colour, price and roll stock are illustrative; not available for purchase.",
+      "price": 8500,
+      "pricePerYard": 8500,
+      "images": [
+        "/images/fabric-editorial-v2.jpg"
+      ],
+      "tags": [
+        "Cotton",
+        "Fabric"
+      ],
+      "isActive": true,
+      "isFeatured": true,
+      "rating": 0,
+      "reviewsCount": 0,
+      "createdAt": "2026-10-25T12:00:00Z",
+      "colorVariants": [
+        {
+          "_id": "preview-soft-ivory-cotton-original",
+          "colorName": "Original",
+          "swatchColor": "#ECE6D9",
+          "rollStockHalfYards": 60,
+          "image": "/images/fabric-editorial-v2.jpg"
+        },
+        {
+          "_id": "preview-soft-ivory-cotton-contrast",
+          "colorName": "Contrast",
+          "swatchColor": "#48483F",
+          "rollStockHalfYards": 12,
+          "image": "/images/fabric-editorial-v2.jpg"
+        }
+      ]
+    },
+    {
+      "_id": "preview-charcoal-suiting",
+      "slug": "charcoal-suiting",
+      "name": "Charcoal Suiting",
+      "productType": "fabric",
+      "category": "Fabrics",
+      "brand": "McLily Preview",
+      "material": "Wool",
+      "description": "Charcoal Suiting. Sample fabric listing for testing swatches and half-yard quantities. Image, colour, price and roll stock are illustrative; not available for purchase.",
+      "price": 18000,
+      "pricePerYard": 18000,
+      "images": [
+        "/images/fabric-editorial-v2.jpg"
+      ],
+      "tags": [
+        "Wool",
+        "Fabric"
+      ],
+      "isActive": true,
+      "isFeatured": true,
+      "rating": 0,
+      "reviewsCount": 0,
+      "createdAt": "2026-10-24T12:00:00Z",
+      "colorVariants": [
+        {
+          "_id": "preview-charcoal-suiting-original",
+          "colorName": "Original",
+          "swatchColor": "#343434",
+          "rollStockHalfYards": 60,
+          "image": "/images/fabric-editorial-v2.jpg"
+        },
+        {
+          "_id": "preview-charcoal-suiting-contrast",
+          "colorName": "Contrast",
+          "swatchColor": "#48483F",
+          "rollStockHalfYards": 12,
+          "image": "/images/fabric-editorial-v2.jpg"
+        }
+      ]
+    },
+    {
+      "_id": "preview-classic-satin",
+      "slug": "classic-satin",
+      "name": "Classic Satin",
+      "productType": "fabric",
+      "category": "Fabrics",
+      "brand": "McLily Preview",
+      "material": "Satin",
+      "description": "Classic Satin. Sample fabric listing for testing swatches and half-yard quantities. Image, colour, price and roll stock are illustrative; not available for purchase.",
+      "price": 10500,
+      "pricePerYard": 10500,
+      "images": [
+        "/images/fabric-satin.jpg"
+      ],
+      "tags": [
+        "Satin",
+        "Fabric"
+      ],
+      "isActive": true,
+      "isFeatured": true,
+      "rating": 0,
+      "reviewsCount": 0,
+      "createdAt": "2026-10-27T12:00:00Z",
+      "colorVariants": [
+        {
+          "_id": "preview-classic-satin-original",
+          "colorName": "Original",
+          "swatchColor": "#51405E",
+          "rollStockHalfYards": 60,
+          "image": "/images/fabric-satin.jpg"
+        },
+        {
+          "_id": "preview-classic-satin-contrast",
+          "colorName": "Contrast",
+          "swatchColor": "#48483F",
+          "rollStockHalfYards": 12,
+          "image": "/images/fabric-satin.jpg"
+        }
+      ]
+    },
+    {
+      "_id": "preview-heritage-ankara",
+      "slug": "heritage-ankara",
+      "name": "Heritage Ankara",
+      "productType": "fabric",
+      "category": "Fabrics",
+      "brand": "McLily Preview",
+      "material": "Ankara",
+      "description": "Heritage Ankara. Sample fabric listing for testing swatches and half-yard quantities. Image, colour, price and roll stock are illustrative; not available for purchase.",
+      "price": 12500,
+      "pricePerYard": 12500,
+      "images": [
+        "/images/fabric-ankara.jpg"
+      ],
+      "tags": [
+        "Ankara",
+        "Fabric"
+      ],
+      "isActive": true,
+      "isFeatured": true,
+      "rating": 0,
+      "reviewsCount": 0,
+      "createdAt": "2026-10-28T12:00:00Z",
+      "colorVariants": [
+        {
+          "_id": "preview-heritage-ankara-original",
+          "colorName": "Original",
+          "swatchColor": "#4B563E",
+          "rollStockHalfYards": 60,
+          "image": "/images/fabric-ankara.jpg"
+        },
+        {
+          "_id": "preview-heritage-ankara-contrast",
+          "colorName": "Contrast",
+          "swatchColor": "#48483F",
+          "rollStockHalfYards": 12,
+          "image": "/images/fabric-ankara.jpg"
+        }
+      ]
+    },
+    {
+      "_id": "preview-occasion-lace",
+      "slug": "occasion-lace",
+      "name": "Occasion Lace",
+      "productType": "fabric",
+      "category": "Fabrics",
+      "brand": "McLily Preview",
+      "material": "Lace",
+      "description": "Occasion Lace. Sample fabric listing for testing swatches and half-yard quantities. Image, colour, price and roll stock are illustrative; not available for purchase.",
+      "price": 22000,
+      "pricePerYard": 22000,
+      "images": [
+        "/images/fabric-lace.jpg"
+      ],
+      "tags": [
+        "Lace",
+        "Fabric"
+      ],
+      "isActive": true,
+      "isFeatured": true,
+      "rating": 0,
+      "reviewsCount": 0,
+      "createdAt": "2026-10-26T12:00:00Z",
+      "colorVariants": [
+        {
+          "_id": "preview-occasion-lace-original",
+          "colorName": "Original",
+          "swatchColor": "#B18B86",
+          "rollStockHalfYards": 60,
+          "image": "/images/fabric-lace.jpg"
+        },
+        {
+          "_id": "preview-occasion-lace-contrast",
+          "colorName": "Contrast",
+          "swatchColor": "#48483F",
+          "rollStockHalfYards": 12,
+          "image": "/images/fabric-lace.jpg"
+        }
+      ]
+    }
+  ]
+}

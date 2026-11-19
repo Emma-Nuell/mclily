@@ -1,0 +1,52 @@
+[
+  {
+    "id": "look-brown-suit",
+    "title": "The Modern Three-Piece",
+    "category": "Men’s tailoring",
+    "filter": "Men",
+    "image": "/images/tailoring/atelier-hero.jpg",
+    "objectPosition": "77% center",
+    "description": "Warm tones, a considered fit and the details that make an occasion yours."
+  },
+  {
+    "id": "look-olive-gown",
+    "title": "The Olive Evening Gown",
+    "category": "Women’s wear",
+    "filter": "Women",
+    "image": "/images/tailoring/olive-evening-gown.jpg",
+    "description": "A sculpted silhouette with soft draping. Bring your own colour, fabric and finishing ideas."
+  },
+  {
+    "id": "look-green-agbada",
+    "title": "A New Take on Tradition",
+    "category": "Traditional attire",
+    "filter": "Traditional",
+    "image": "/images/tailoring/forest-agbada.jpg",
+    "description": "A timeless silhouette, explored through rich colour and understated detailing."
+  },
+  {
+    "id": "look-blue-suit",
+    "title": "The Working Wardrobe",
+    "category": "Corporate outfits",
+    "filter": "Corporate",
+    "image": "/images/tailoring/ivory-corporate.jpg",
+    "description": "Clean lines for work, events and everything in between."
+  },
+  {
+    "id": "look-kids-occasion",
+    "title": "Little Occasion, Big Style",
+    "category": "Children’s wear",
+    "filter": "Children",
+    "image": "/images/tailoring/little-gentleman.jpg",
+    "description": "A little personality for their big day, with fit and comfort in mind."
+  },
+  {
+    "id": "look-casual",
+    "title": "The Relaxed Edit",
+    "category": "Casual tailoring",
+    "filter": "Casual",
+    "image": "/images/mclily-campaign-v2.jpg",
+    "objectPosition": "75% center",
+    "description": "An easy silhouette to make your own. Share the details you love with our tailor."
+  }
+]

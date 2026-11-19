@@ -1,0 +1,103 @@
+name: McLily CI Pipeline
+
+on:
+  push:
+    branches: [ main, master, develop ]
+  pull_request:
+    branches: [ main, master, develop ]
+
+jobs:
+  backend-check:
+    name: Backend Lint & Test
+    runs-on: ubuntu-latest
+    env:
+      NODE_ENV: test
+      MONGODB_URI: mongodb://127.0.0.1:27017/mcl_test_ci?replicaSet=rs0&directConnection=true
+      JWT_SECRET: isolated_ci_secret_never_for_production
+      PAYSTACK_SECRET_KEY: sk_test_mock_secret_key
+    defaults:
+      run:
+        working-directory: backend
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: 'npm'
+          cache-dependency-path: backend/package-lock.json
+
+      - name: Install Backend Dependencies
+        run: npm ci
+
+      - name: Check standalone deployment copies
+        run: node ../scripts/sync-shared.mjs --check
+
+      - name: Start disposable MongoDB replica set
+        run: |
+          docker run -d --name mcl-test-mongo -p 27017:27017 mongo:8 --replSet rs0 --bind_ip_all
+          for attempt in {1..30}; do
+            if docker exec mcl-test-mongo mongosh --quiet --eval 'db.runCommand({ping:1}).ok' >/dev/null 2>&1; then break; fi
+            sleep 1
+          done
+          docker exec mcl-test-mongo mongosh --quiet --eval 'rs.initiate({_id:"rs0",members:[{_id:0,host:"localhost:27017"}]})'
+          for attempt in {1..30}; do
+            if docker exec mcl-test-mongo mongosh --quiet --eval 'if (!db.hello().isWritablePrimary) quit(1)' >/dev/null 2>&1; then break; fi
+            sleep 1
+          done
+
+      - name: Verify Backend Tests
+        run: npm test
+
+  frontend-build:
+    name: Frontend Lint & Production Build
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: frontend
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: 'npm'
+          cache-dependency-path: frontend/package-lock.json
+
+      - name: Install Frontend Dependencies
+        run: npm ci
+
+      - name: Build Frontend
+        env:
+          VITE_API_URL: /api
+        run: npm run build
+
+      - name: Test standalone storefront hosting
+        run: npm test
+
+  admin-build:
+    name: Admin Dashboard Lint & Build
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: admin
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: 'npm'
+          cache-dependency-path: admin/package-lock.json
+
+      - name: Install Admin Dependencies
+        run: npm ci
+
+      - name: Build Admin
+        run: npm run build

@@ -1,0 +1,30 @@
+{
+  "pickup": { "enabled": false, "address": "", "hours": "" },
+  "externalCourierEnabled": true,
+  "zones": [
+    {
+      "id": "lagos_mainland",
+      "name": "Lagos Mainland",
+      "fee": 2500,
+      "states": ["Lagos"],
+      "cities": [],
+      "enabled": false
+    },
+    {
+      "id": "lagos_island",
+      "name": "Lagos Island",
+      "fee": 3500,
+      "states": ["Lagos"],
+      "cities": [],
+      "enabled": false
+    },
+    {
+      "id": "abuja",
+      "name": "Abuja",
+      "fee": 4500,
+      "states": ["FCT", "Abuja"],
+      "cities": [],
+      "enabled": false
+    }
+  ]
+}

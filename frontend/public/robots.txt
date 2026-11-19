@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+# Hosted responses provide a sitemap on the actual public origin.
+# Admin, account and checkout responses use noindex; public pages remain indexable.

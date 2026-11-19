@@ -1,0 +1,137 @@
+.tailoring-page { --tailor-warm: #e8e0d2; --tailor-stone: #776e5f; padding-top: 24px; }
+.tailor-hero { position: relative; max-width: 1280px; min-height: 550px; margin: 0 auto; overflow: hidden; background: #e8e1d5; color: #211e18; }
+.tailor-hero > img { position: absolute; width: 100%; height: 100%; inset: 0; object-fit: cover; object-position: center top; }
+.tailor-hero-wash { position: absolute; inset: 0; background: linear-gradient(90deg, #eee8dd 0%, rgba(238,232,221,.96) 26%, rgba(238,232,221,.45) 45%, transparent 64%); }
+.tailor-hero-copy { position: relative; padding: 70px 56px 50px; max-width: 650px; }
+.tailor-eyebrow { font-size: 9px; letter-spacing: .18em; text-transform: uppercase; font-weight: 500; margin-bottom: 18px; color: var(--text-secondary); }
+.tailor-hero-copy .tailor-eyebrow { color: #655c4d; }
+.tailor-hero h1, .tailor-content h2, .mcl-orbit__title { font-family: Georgia, 'Times New Roman', serif; font-weight: 400; letter-spacing: -.045em; }
+.tailor-hero h1 { font-size: clamp(48px,5.5vw,72px); line-height: .99; max-width: 450px; }
+.tailor-hero-copy > p:not(.tailor-eyebrow) { font-size: 13px; line-height: 1.7; max-width: 330px; margin-top: 24px; color: #494337; }
+.tailor-hero-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 12px; margin-top: 28px; }
+.tailor-button { display: inline-flex; align-items: center; justify-content: center; gap: 10px; font-size: 11px; font-weight: 500; min-height: 44px; padding: 12px 19px; border-radius: 100px; text-align: center; line-height: 1.4; }
+.tailor-button-primary { background: var(--control-primary); color: var(--control-primary-text); }
+.tailor-button-secondary { background: rgba(255,255,255,.75); color: #25221b; }
+.tailor-button-light { background: #f4f1e9; color: #1e221c; }
+.tailor-hero-footnote { display: flex; flex-direction: column; gap: 5px; margin-top: 38px; font-size: 11px; color: #655c4d; }
+.tailor-hero-footnote span:first-child { font-size: 14px; color: #27231c; }
+.tailor-content { max-width: 1280px; padding: 0 32px 64px; margin: auto; }
+.tailor-categories { display: grid; grid-template-columns: repeat(5,minmax(0,1fr)); gap: 14px; margin: 24px 0 72px; }
+.tailor-category { min-width: 0; position: relative; }
+.tailor-category > div { overflow: hidden; aspect-ratio: 4/5; border-radius: 10px; background: var(--surface-secondary); }
+.tailor-category img { width: 100%; height: 100%; object-fit: cover; transition: transform .4s; }
+.tailor-category:hover img { transform: scale(1.025); }
+.tailor-category h2 { font-family: inherit; font-size: 12px; font-weight: 550; letter-spacing: -.02em; margin-top: 12px; }
+.tailor-category p { font-size: 10px; line-height: 1.6; color: var(--text-secondary); margin-top: 4px; padding-right: 12px; }
+.tailor-category > svg { position: absolute; right: 0; top: calc(100% - 40px); }
+.tailor-section-heading { display: flex; justify-content: space-between; align-items: end; gap: 24px; margin-bottom: 30px; }
+.tailor-section-heading h2 { font-size: clamp(28px,3vw,40px); line-height: 1.1; }
+.tailor-section-heading > p { font-size: 12px; line-height: 1.6; color: var(--text-secondary); }
+.tailor-section-heading .tailor-eyebrow { margin-bottom: 12px; }
+.tailor-process { margin-bottom: 64px; }
+.tailor-process ol { display: grid; grid-template-columns: repeat(4,minmax(0,1fr)); gap: 32px; padding: 0; list-style: none; }
+.tailor-step-icon { display: grid; place-items: center; width: 43px; height: 43px; border-radius: 50%; background: var(--surface-secondary); margin-bottom: 18px; color: var(--text-primary); }
+.tailor-process li > div { display: flex; align-items: baseline; gap: 12px; }
+.tailor-step-number { font-size: 16px; color: var(--text-secondary); font-variant-numeric: tabular-nums; }
+.tailor-process h3 { font-size: 12px; font-weight: 550; margin-bottom: 7px; }
+.tailor-process li p { font-size: 12px; line-height: 1.6; color: var(--text-secondary); max-width: 190px; }
+.tailor-gallery-anchor, .tailor-inspiration { scroll-margin-top: 90px; }
+.tailor-gallery-anchor .mcl-orbit { border-radius: 16px; }
+.mcl-orbit__title { font-size: clamp(30px,4vw,50px); max-width: 700px; }
+.mcl-orbit__cta { display: inline-flex; align-items: center; justify-content: center; gap: 10px; border-radius: 100px; }
+.tailor-inspiration { margin-top: 70px; }
+.tailor-style-filters { display: flex; gap: 8px; overflow-x: auto; padding-bottom: 18px; scrollbar-width: none; }
+.tailor-style-filters button { flex-shrink: 0; font-size: 11px; padding: 9px 16px; border-radius: 100px; min-height: 38px; background: var(--surface); border: 1px solid var(--border-color); color: var(--text-secondary); }
+.tailor-style-filters button[aria-pressed="true"] { background: var(--control-primary); color: var(--control-primary-text); border-color: transparent; }
+.tailor-style-grid { display: grid; grid-template-columns: repeat(6,minmax(0,1fr)); gap: 14px; }
+.tailor-style-card { min-width: 0; text-align: left; }
+.tailor-style-card > div { position: relative; overflow: hidden; aspect-ratio: 3/4; border-radius: 10px; background: var(--surface-secondary); }
+.tailor-style-card img { display: block; width: 100%; height: 100%; object-fit: cover; }
+.tailor-style-card > div span { position: absolute; inset: auto 0 0; background: rgba(15,16,13,.7); color: #fff; font-size: 9px; padding: 8px; opacity: 0; transition: opacity .15s; }
+.tailor-style-card:hover > div span, .tailor-style-card.is-selected > div span, .tailor-style-card:focus-visible > div span { opacity: 1; }
+.tailor-style-card.is-selected > div { outline: 2px solid var(--text-primary); outline-offset: 3px; }
+.tailor-style-card h3 { font-size: 11px; font-weight: 500; margin-top: 12px; line-height: 1.4; }
+.tailor-style-card p { font-size: 10px; color: var(--text-secondary); margin-top: 4px; }
+.tailor-selected-style { margin-top: 26px; padding: 20px 0; border-block: 1px solid var(--border-color); display: flex; align-items: center; justify-content: space-between; gap: 20px; }
+.tailor-selected-style p { display: flex; flex-direction: column; gap: 5px; font-size: 13px; }
+.tailor-selected-style p > span { font-size: 9px; letter-spacing: .1em; text-transform: uppercase; color: var(--text-secondary); }
+.tailor-lookbook { display: grid; grid-template-columns: 1fr 1.4fr; gap: 64px; align-items: center; margin-top: 72px; padding: 40px 0 56px; border-bottom: 1px solid var(--border-color); }
+.tailor-lookbook h2 { font-size: 44px; line-height: 1.06; }
+.tailor-lookbook p:not(.tailor-eyebrow) { font-size: 13px; line-height: 1.7; color: var(--text-secondary); margin-top: 20px; max-width: 320px; }
+.tailor-text-link { display: inline-flex; align-items: center; gap: 10px; font-size: 12px; font-weight: 500; }
+.tailor-lookbook .tailor-text-link { margin-top: 24px; }
+.tailor-lookbook-images { display: grid; grid-template-columns: 1.3fr 1fr; gap: 10px; height: 390px; overflow: hidden; border-radius: 12px; }
+.tailor-lookbook-images img { width: 100%; height: 100%; object-fit: cover; min-height: 0; }
+.tailor-lookbook-images img:first-child { grid-row: span 2; }
+.tailor-fabrics { margin-top: 64px; }
+.tailor-fabric-grid { display: grid; grid-template-columns: repeat(4,minmax(0,1fr)); gap: 18px; }
+.tailor-fabric-grid a { min-width: 0; }
+.tailor-fabric-grid img { width: 100%; aspect-ratio: 1/1; object-fit: cover; border-radius: 10px; background: var(--surface-secondary); }
+.tailor-fabric-grid h3 { margin-top: 12px; font-size: 13px; font-weight: 500; }
+.tailor-fabric-grid p { font-size: 12px; margin-top: 6px; }
+.tailor-fabric-grid p span { color: var(--text-secondary); }
+.tailor-final-cta { display: flex; align-items: center; justify-content: space-between; gap: 30px; margin-top: 64px; padding: 36px 40px; border-radius: 14px; color: #f4f1e9; background: #20271f; }
+.tailor-final-cta .tailor-eyebrow { color: #c2c8ba; margin-bottom: 10px; }
+.tailor-final-cta h2 { font-size: 32px; line-height: 1.1; }
+.tailor-final-cta p:not(.tailor-eyebrow) { font-size: 12px; line-height: 1.5; margin-top: 12px; color: #c2c8ba; }
+.dark .tailor-hero { color: #f4f1e9; background: #22221e; }
+.dark .tailor-hero-wash { background: linear-gradient(90deg, #22221e 0%, rgba(34,34,30,.98) 25%, rgba(34,34,30,.5) 48%, transparent 70%); }
+.dark .tailor-hero-copy > p:not(.tailor-eyebrow), .dark .tailor-hero-copy .tailor-eyebrow, .dark .tailor-hero-footnote { color: #c4beb2; }
+.dark .tailor-hero-footnote span:first-child { color: #f4f1e9; }
+
+@media (max-width: 767px) {
+  .tailoring-page { padding-top: 0; }
+  .tailor-hero { min-height: 485px; }
+  .tailor-hero > img { object-position: 77% center; }
+  .tailor-hero-wash, .dark .tailor-hero-wash { background: linear-gradient(0deg, rgba(15,16,13,.95) 0%, rgba(15,16,13,.5) 48%, rgba(15,16,13,.02) 100%); }
+  .tailor-hero-copy { padding: 190px 24px 28px; color: #fff; }
+  .tailor-hero-copy .tailor-eyebrow { color: #e9e2d6; font-size: 8px; margin-bottom: 12px; }
+  .tailor-hero h1 { font-size: 43px; line-height: 1; }
+  .tailor-hero-copy > p:not(.tailor-eyebrow) { font-size: 12px; line-height: 1.6; color: #eee8dd; margin-top: 16px; max-width: 285px; }
+  .tailor-hero-actions { margin-top: 20px; gap: 8px; }
+  .tailor-hero-actions .tailor-button { font-size: 10px; padding: 11px 14px; }
+  .tailor-hero-actions .tailor-button-primary { background: #fff; color: #191b17; }
+  .tailor-hero-actions .tailor-button-secondary { background: rgba(255,255,255,.15); color: #fff; border: 1px solid rgba(255,255,255,.25); }
+  .tailor-hero-footnote { display: none; }
+  .tailor-content { padding: 0 16px 36px; }
+  .tailor-categories { display: flex; gap: 10px; margin: 18px 0 38px; overflow-x: auto; scrollbar-width: none; padding: 0 0 8px; }
+  .tailor-category { width: 130px; flex-shrink: 0; }
+  .tailor-category > div { aspect-ratio: 4/5; border-radius: 9px; }
+  .tailor-category h2 { font-size: 11px; margin-top: 10px; }
+  .tailor-category p { font-size: 9px; max-width: 120px; }
+  .tailor-category > svg { display: none; }
+  .tailor-section-heading { margin-bottom: 24px; align-items: start; gap: 16px; }
+  .tailor-section-heading h2 { font-size: 28px; }
+  .tailor-section-heading .tailor-eyebrow { font-size: 8px; margin-bottom: 9px; }
+  .tailor-section-heading > p { display: none; }
+  .tailor-process { margin-bottom: 38px; }
+  .tailor-process ol { grid-template-columns: 1fr; gap: 24px; padding: 0 6px; }
+  .tailor-process li { display: flex; gap: 16px; align-items: start; }
+  .tailor-step-icon { flex-shrink: 0; margin: 0; width: 38px; height: 38px; }
+  .tailor-step-number { display: none; }
+  .tailor-process h3 { margin-top: 2px; font-size: 12px; }
+  .tailor-process li p { max-width: 270px; font-size: 12px; }
+  .tailor-gallery-anchor .mcl-orbit { padding: 26px 16px; border-radius: 13px; }
+  .mcl-orbit__eyebrow { font-size: 8px; line-height: 1.6; }
+  .mcl-orbit__title { font-size: 31px; max-width: 245px; }
+  .mcl-orbit__intro { font-size: 11px; }
+  .mcl-orbit__viewport { min-height: 365px; }
+  .mcl-orbit__detail h3 { font-size: 24px; }
+  .mcl-orbit__cta { font-size: 11px; }
+  .tailor-inspiration { margin-top: 40px; }
+  .tailor-style-grid { grid-template-columns: repeat(2,minmax(0,1fr)); gap: 22px 12px; }
+  .tailor-style-card h3 { font-size: 12px; }
+  .tailor-style-card p { font-size: 10px; }
+  .tailor-selected-style { flex-direction: column; align-items: start; gap: 16px; padding: 20px 0; }
+  .tailor-selected-style .tailor-button { align-self: stretch; }
+  .tailor-lookbook { margin-top: 40px; grid-template-columns: 1fr; gap: 24px; padding: 10px 0 36px; }
+  .tailor-lookbook h2 { font-size: 34px; }
+  .tailor-lookbook p:not(.tailor-eyebrow) { max-width: 320px; }
+  .tailor-lookbook-images { height: 330px; }
+  .tailor-fabrics { margin-top: 36px; }
+  .tailor-fabrics .tailor-section-heading { flex-direction: column; gap: 12px; }
+  .tailor-fabric-grid { grid-template-columns: repeat(2,minmax(0,1fr)); gap: 22px 12px; }
+  .tailor-fabric-grid h3 { font-size: 12px; }
+  .tailor-final-cta { flex-direction: column; align-items: stretch; margin-top: 40px; padding: 26px 22px; gap: 24px; }
+  .tailor-final-cta h2 { font-size: 29px; }
+}
