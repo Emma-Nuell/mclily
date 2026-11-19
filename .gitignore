@@ -39,7 +39,6 @@ logs/
 .test-data/
 
 mclily-tailoring-gallery/
-.node-version
 BACHS_SETUP.md
 BRAIN.md
 DEPLOYMENT_READINESS.md
@@ -52,3 +51,6 @@ RENDER_SETUP.md
 ROADMAP.md
 PROJECT_LOG.md
 BRAIN.md
+ASSETS_PROMPTS.md
+checklist.md
+project_analysis.md
