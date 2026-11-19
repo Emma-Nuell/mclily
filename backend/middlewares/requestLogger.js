@@ -85,10 +85,22 @@ export function requestRoute(req) {
 const errorLabel = (value) =>
   /^[A-Za-z0-9_]{1,80}$/.test(String(value || '')) ? String(value) : undefined;
 
+function writeRequestLog(entry) {
+  const line = `[${entry.timestamp}] ${entry.method} ${entry.path}`;
+  if (entry.status < 400) return console.log(line);
+  const code = entry.aborted
+    ? 'CLIENT_DISCONNECTED'
+    : errorLabel(entry.error?.code);
+  const name = errorLabel(entry.error?.name);
+  const detail = `${line} -> ${entry.status}${code ? ` ${code}` : ''}${name && name !== 'Error' ? ` (${name})` : ''}`;
+  if (entry.status >= 500) console.error(detail);
+  else console.warn(detail);
+}
+
 export function requestLogger({
   enabled = true,
   logHealthChecks = false,
-  write = (entry) => console.log(JSON.stringify(entry)),
+  write = writeRequestLog,
 } = {}) {
   return (req, res, next) => {
     req.requestId = randomUUID();

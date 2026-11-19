@@ -1,4 +1,4 @@
-import { describe, it, expect } from 'vitest';
+import { describe, it, expect, vi } from 'vitest';
 import express from 'express';
 import request from 'supertest';
 import { EventEmitter } from 'node:events';
@@ -21,6 +21,47 @@ function fixture(options = {}) {
 }
 
 describe('Safe backend request logging', () => {
+  it('prints compact successes and visible safe failure details on the appropriate console streams', async () => {
+    const log = vi.spyOn(console, 'log').mockImplementation(() => {});
+    const warn = vi.spyOn(console, 'warn').mockImplementation(() => {});
+    const error = vi.spyOn(console, 'error').mockImplementation(() => {});
+    try {
+      const server = express();
+      server.use(requestLogger());
+      server.get('/api/orders', (req, res) => res.json({ success: true }));
+      server.get('/api/reports/sales', () => {
+        throw new AppError(
+          500,
+          'REPORT_FAILURE',
+          'private-password and mongodb://secret'
+        );
+      });
+      server.use(notFoundHandler);
+      server.use(errorHandler);
+      await request(server).get('/api/orders?access=private-token');
+      await request(server).get('/api/notfound');
+      await request(server).get('/api/reports/sales');
+      expect(log).toHaveBeenCalledTimes(1);
+      expect(log.mock.calls[0][0]).toMatch(
+        /^\[\d{4}-\d\d-\d\dT[^\]]+\] GET \/api\/orders$/
+      );
+      expect(warn).toHaveBeenCalledTimes(1);
+      expect(warn.mock.calls[0][0]).toContain(
+        'GET /api/:param -> 404 ROUTE_NOT_FOUND'
+      );
+      expect(error).toHaveBeenCalledTimes(1);
+      expect(error.mock.calls[0][0]).toContain(
+        'GET /api/reports/sales -> 500 REPORT_FAILURE'
+      );
+      expect(
+        JSON.stringify([log.mock.calls, warn.mock.calls, error.mock.calls])
+      ).not.toMatch(/private-password|mongodb|private-token/);
+    } finally {
+      log.mockRestore();
+      warn.mockRestore();
+      error.mockRestore();
+    }
+  });
   it('logs completed method/route/status/duration with a generated response request ID', async () => {
     const { server, entries } = fixture();
     const router = express.Router();
